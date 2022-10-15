@@ -7,6 +7,7 @@ Created on Fri Oct 14 19:04:47 2022
 import requests
 import json
 
+
 from web3 import Web3
 
 # Change this to use your own RPC URL
