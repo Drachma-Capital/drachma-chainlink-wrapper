@@ -7,9 +7,11 @@ import "./ETHConverter.sol";
 contract PriceFeed {
     AggregatorV3Interface internal priceFeed;
     address public ETHConverterAddress;
+    address public asset;
     constructor(address _ETHConverterAddress, address _asset) {
         priceFeed = AggregatorV3Interface(_asset);
         ETHConverterAddress = _ETHConverterAddress;
+        asset = _asset;
     }
 
     /**
@@ -30,6 +32,10 @@ contract PriceFeed {
        uint priceOfAsset = uint(getLatestPrice());
        return ETHConverter(ETHConverterAddress).usdValue(priceOfAsset); 
 
+    }
+
+    function viewAssetAddress() public view returns (address) {
+        return asset;
     }
 }
 
