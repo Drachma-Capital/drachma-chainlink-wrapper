@@ -31,9 +31,10 @@ contract ETHConverter {
     }
 
 
-    function convertToUSD(uint etherAmount) public view returns (uint) {
+    function usdValue(uint etherAmount) public view returns (uint) {
         uint price = uint(getLatestPrice());
-        return price * etherAmount;
+        return (price * etherAmount);
+        // Divide by 10**16 to get the value in USD
     }
 
 
