@@ -3,17 +3,12 @@ pragma solidity ^0.8.7;
 import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 import "./ETHConverter.sol";
 
-contract OHMPriceFeed {
-    AggregatorV3Interface internal priceFeed;
 
-    /**
-     * Network: Ethereum Mainnet
-     * Aggregator:  OHM/ETH
-     * Address: 0x9a72298ae3886221820B1c878d12D872087D3a23
-     */
+contract PriceFeed {
+    AggregatorV3Interface internal priceFeed;
     address public ETHConverterAddress;
-    constructor(address _ETHConverterAddress) {
-        priceFeed = AggregatorV3Interface(0x9a72298ae3886221820B1c878d12D872087D3a23);
+    constructor(address _ETHConverterAddress, address _asset) {
+        priceFeed = AggregatorV3Interface(_asset);
         ETHConverterAddress = _ETHConverterAddress;
     }
 
