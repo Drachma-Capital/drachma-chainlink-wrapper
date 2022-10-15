@@ -31,7 +31,7 @@ contract OHMPriceFeed {
         return price;
     }
 
-    function convertETHPriceToUSD(uint ethPrice) public view returns (uint) {
+    function convertETHPriceToUSD() public view returns (uint) {
        uint priceOfAsset = uint(getLatestPrice());
        return ETHConverter(ETHConverterAddress).usdValue(priceOfAsset); 
 
