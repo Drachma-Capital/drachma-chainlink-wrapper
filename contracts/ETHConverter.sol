@@ -34,7 +34,7 @@ contract ETHConverter {
     function usdValue(uint priceOfAsset) public view returns (uint) {
         uint price = uint(getLatestPrice());
         return (price * priceOfAsset);
-        // Divide by 10**16 to get the value in USD
+        // Divide by 10**26 to get the value in USD
     }
 
 
