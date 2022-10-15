@@ -22,3 +22,15 @@ class OracleClient:
         current_price = contract.functions.getLatestPrice().call()
         price = (current_price)/10**18
         return price
+    
+    def live_price_in_usd(self):
+        web3 = Web3(Web3.HTTPProvider('http://127.0.0.1:8545'))
+        # AggregatorV3Interface ABI
+        abi = '[{ "inputs": [ { "internalType": "address", "name": "_ETHConverterAddress", "type": "address" }, { "internalType": "address", "name": "_asset", "type": "address" } ], "stateMutability": "nonpayable", "type": "constructor" }, { "inputs": [], "name": "ETHConverterAddress", "outputs": [ { "internalType": "address", "name": "", "type": "address" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "asset", "outputs": [ { "internalType": "address", "name": "", "type": "address" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "getLatestPrice", "outputs": [ { "internalType": "int256", "name": "", "type": "int256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "convertETHPriceToUSD", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "viewAssetAddress", "outputs": [ { "internalType": "address", "name": "", "type": "address" } ], "stateMutability": "view", "type": "function" }]' 
+        
+        # Set up contract instance
+        contract = web3.eth.contract(address=self.address, abi=abi)
+        
+        current_price = contract.functions.convertETHPriceToUSD().call()
+        price = (current_price)/10**18
+        return price
