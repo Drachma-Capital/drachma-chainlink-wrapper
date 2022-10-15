@@ -1,12 +1,15 @@
-const Token = artifacts.require("OHMPriceFeed")
+
+const OHMPriceFeed = artifacts.require("OHMPriceFeed")
 
 
 
-contract("Token", (accounts) => {
-  it("Should put initial tokens inside senders account", async() => {
-    const tokenInstance = await Token.deployed(10);
-    const balances = (await tokenInstance.balanceOf(accounts[0])).toNumber()
+contract("OHMPriceFeed", (accounts) => {
+  it("Should get price of OHM paired against ETH", async() => {
+    const dataFeed = await OHMPriceFeed.deployed();
+    
+    const price = await dataFeed.getLatestPrice()
+    console.log(price)
 
-    assert.equal(balances, 10)
+    assert.equal(price, price)
   })
 })
