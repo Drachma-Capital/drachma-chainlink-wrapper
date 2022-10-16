@@ -6,3 +6,4 @@ Created on Sun Oct 16 11:08:30 2022
 """
 
 from .wrapper import OracleClient
+from .rpc import *

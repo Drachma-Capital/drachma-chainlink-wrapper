@@ -7,12 +7,14 @@ Created on Fri Oct 14 19:04:47 2022
 
 from web3 import Web3
 
+
 class OracleClient:
-    def __init__(self, address):
+    def __init__(self, address, rpc):
         self.address = address
+        self.rpc = rpc
     
     def price_eth_pair(self):
-        web3 = Web3(Web3.HTTPProvider('https://goerli.infura.io/v3/f4604f2f3c7540929af83597010178cd'))
+        web3 = Web3(Web3.HTTPProvider(self.rpc))
         # AggregatorV3Interface ABI
         abi = '[{ "inputs": [ { "internalType": "address", "name": "_ETHConverterAddress", "type": "address" }, { "internalType": "address", "name": "_asset", "type": "address" } ], "stateMutability": "nonpayable", "type": "constructor" }, { "inputs": [], "name": "ETHConverterAddress", "outputs": [ { "internalType": "address", "name": "", "type": "address" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "asset", "outputs": [ { "internalType": "address", "name": "", "type": "address" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "getLatestPrice", "outputs": [ { "internalType": "int256", "name": "", "type": "int256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "convertETHPriceToUSD", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "viewAssetAddress", "outputs": [ { "internalType": "address", "name": "", "type": "address" } ], "stateMutability": "view", "type": "function" }]' 
         
@@ -24,7 +26,7 @@ class OracleClient:
         return price
     
     def price_eth_pair_to_usd(self):
-        web3 = Web3(Web3.HTTPProvider('https://goerli.infura.io/v3/f4604f2f3c7540929af83597010178cd'))
+        web3 = Web3(Web3.HTTPProvider(self.rpc))
         # AggregatorV3Interface ABI
         abi = '[{ "inputs": [ { "internalType": "address", "name": "_ETHConverterAddress", "type": "address" }, { "internalType": "address", "name": "_asset", "type": "address" } ], "stateMutability": "nonpayable", "type": "constructor" }, { "inputs": [], "name": "ETHConverterAddress", "outputs": [ { "internalType": "address", "name": "", "type": "address" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "asset", "outputs": [ { "internalType": "address", "name": "", "type": "address" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "getLatestPrice", "outputs": [ { "internalType": "int256", "name": "", "type": "int256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "convertETHPriceToUSD", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "viewAssetAddress", "outputs": [ { "internalType": "address", "name": "", "type": "address" } ], "stateMutability": "view", "type": "function" }]' 
         
@@ -36,7 +38,7 @@ class OracleClient:
         return price
    
     def price_usd_pair(self):
-        web3 = Web3(Web3.HTTPProvider('https://goerli.infura.io/v3/f4604f2f3c7540929af83597010178cd'))
+        web3 = Web3(Web3.HTTPProvider(self.rpc))
         # AggregatorV3Interface ABI
         abi = '[{ "inputs": [ { "internalType": "address", "name": "_ETHConverterAddress", "type": "address" }, { "internalType": "address", "name": "_asset", "type": "address" } ], "stateMutability": "nonpayable", "type": "constructor" }, { "inputs": [], "name": "ETHConverterAddress", "outputs": [ { "internalType": "address", "name": "", "type": "address" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "asset", "outputs": [ { "internalType": "address", "name": "", "type": "address" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "getLatestPrice", "outputs": [ { "internalType": "int256", "name": "", "type": "int256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "convertETHPriceToUSD", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "viewAssetAddress", "outputs": [ { "internalType": "address", "name": "", "type": "address" } ], "stateMutability": "view", "type": "function" }]' 
         
