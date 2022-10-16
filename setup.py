@@ -1,14 +1,14 @@
 from setuptools import setup
 
 setup(
-    name='chainlink-wrapper',
+    name='chainlink_wrapper',
     version='1.0',    
     description='A wrapper to get live price data from chainlink oracles on-chain',
     url='https://github.com/Drachma-Capital/drachma-chainlink-wrapper',
     author='Joshua Finkelstein',
     author_email='joshfinkelstein3@gmail.com',
     license='BSD 2-clause',
-    packages=['chainlink-wrapper'],
+    packages=['chainlink_wrapper'],
     install_requires=[
                       'web3',                     
                       ],
