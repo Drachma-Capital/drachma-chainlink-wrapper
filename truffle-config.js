@@ -22,6 +22,7 @@
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 
 module.exports = {
   /**
@@ -69,11 +70,11 @@ module.exports = {
     // },
     //
     // Useful for private networks
-    // private: {
-    //   provider: () => new HDWalletProvider(mnemonic, `https://network.io`),
-    //   network_id: 2111,   // This network is yours, in the cloud.
-    //   production: true    // Treats this network as if it was a public net. (default: false)
-    // }
+    goerli: {
+      provider: () => new HDWalletProvider(process.env.MNEOMONIC, `https://goerli.infura.io/v3/${process.env.INFURA_API}`),
+      network_id: 5,   // This network is yours, in the cloud.
+      production: true    // Treats this network as if it was a public net. (default: false)
+    }
   },
 
   // Set default mocha options here, use special reporters, etc.
