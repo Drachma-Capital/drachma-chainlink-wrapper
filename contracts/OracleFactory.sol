@@ -24,4 +24,9 @@ contract OracleFactory is Ownable {
         return priceFeedArray[_index];
     }
 
+    function viewLastMadePriceFeed() public view returns (address) {
+        uint lastAddedAddress = priceFeedArray.length-1;
+        return priceFeedArray[lastAddedAddress];
+    }
+
 }
