@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='chainlink_wrapper',
-    version='1.0',    
+    version='1.0.1',    
     description='A wrapper to get live price data from chainlink oracles on-chain',
     url='https://github.com/Drachma-Capital/drachma-chainlink-wrapper',
     author='Joshua Finkelstein',
