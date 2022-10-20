@@ -52,7 +52,15 @@ client.price_eth_pair()
 ### Deployed OracleFactory Contracts:
 | Chain     | Address | 
 | :---        |    :----:   |        
-| Moonriver     |   [0xFbDd9d2056B645fe80ED4793Ac5bDbCeCa16c565](https://moonriver.moonscan.io/address/0xFbDd9d2056B645fe80ED4793Ac5bDbCeCa16c565#code)     | 
+| Moonriver     |   [0xFbDd9d2056B645fe80ED4793Ac5bDbCeCa16c565](https://moonriver.moonscan.io/address/0xFbDd9d2056B645fe80ED4793Ac5bDbCeCa16c565#code)     |
+
+### Current deployed token pairs
+```python
+moonriver_MOVRUSD = "0x9486E807Ca846fee51485c004f59C355D0f199B2"
+moonriver_DOTUSD = "0x03B64921dA75416c470dea4fC43B76B065d4bf24"
+moonriver_KSMUSD = "0x4d4C7472dDD2012587f566B13C3F7f036513B7ef"
+```
+
 
 
 
