@@ -1,6 +1,5 @@
 # Drachma Capital`s Chainlink Wrapper for Python
-
-## WARNING: This is a private tool used for Drachma Capital's operations, please do not outsource this to any associates outside of Drachma Capital.
+## built by: jshuaaaa
 
 ### Installation
 1.    ``` git clone https://github.com/Drachma-Capital/drachma-chainlink-wrapper.git ``` 
